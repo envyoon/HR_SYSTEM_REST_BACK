@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-m	implementation 'org.springframework.boot:spring-boot-starter-jdbc' //hikaricp
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc' //hikaricp
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-web-services' 
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' //thymeleaf
