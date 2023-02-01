@@ -18,8 +18,8 @@ import com.zaxxer.hikari.HikariDataSource;
 @PropertySource("classpath:/application.properties")
 public class DBConfig {
 	
-	@Autowired
-	private ApplicationContext applicationContext;
+//	@Autowired
+//	private ApplicationContext applicationContext;
 	
 	@Bean
 	@ConfigurationProperties(prefix="spring.datasource.hikari")
@@ -34,19 +34,19 @@ public class DBConfig {
 		return dataSource;
 	}
 	
-	@Bean
-	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception{
-		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-		sqlSessionFactoryBean.setDataSource(dataSource);
-		sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:/mapper/**/sql-*.xml"));
-		
-		return sqlSessionFactoryBean.getObject();
-	}
-	
-	@Bean
-	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
-		return new SqlSessionTemplate(sqlSessionFactory);
-	}
+//	@Bean
+//	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception{
+//		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+//		sqlSessionFactoryBean.setDataSource(dataSource);
+//		sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:/mapper/**/sql-*.xml"));
+//		
+//		return sqlSessionFactoryBean.getObject();
+//	}
+//	
+//	@Bean
+//	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
+//		return new SqlSessionTemplate(sqlSessionFactory);
+//	}
 	
 }
 
