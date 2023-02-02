@@ -7,11 +7,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.precursor.hrsystem.mvc.hrlist.a02_service.HrListService;
 import com.precursor.hrsystem.mvc.vo.HrListVO;
 
+//import lombok.AllArgsConstructor;
+
+//@AllArgsConstructor
 @RestController
 @RequestMapping("/hrlist")
 public class HrListController {
@@ -41,7 +45,6 @@ public class HrListController {
 		return "test";
 	}
 	
-	
 	/**
 	 * 모든 HR 인사정보를 가져오는 API
 	 * @return ResponEntity<List<HrListVO>> 200 OK, HR 인사 정보 목록
@@ -49,9 +52,9 @@ public class HrListController {
 	@GetMapping(value = "/hrlist-all")
 	public ResponseEntity<List<HrListVO>> getHrList(){
 		
-		List<HrListVO> hrList = service.getHrList(null);
+		List<HrListVO> hrlist = service.getHrList();
 		
-		return new ResponseEntity<>(hrList, HttpStatus.OK);
+		return ResponseEntity.status(HttpStatus.OK).body(hrlist);
 	}
 	
 	
