@@ -39,6 +39,10 @@ public class HrListController {
 	 * 
 	 * 즉, @RestController 어노테이션만 사용해서 개발을 진행 할 경우 화면 이동하는 걸 배제한 채 개발을 해야 한다.
 	 * 
+	 * 23.02.03 추가
+	 * GetMapping 으로 test URI 불러 왔을 때, JSON으로 리턴 해주는 것 확인 
+	 * 현재 ResponseEntity<List<HrListVO>> getHrList() 부분이 수정되어야 한다는 판단 (Service및 Repository 부분도)
+	 * 
 	 */
 	@GetMapping(value = "/test")
 	public String test() {
