@@ -1,5 +1,6 @@
 package com.precursor.hrsystem.mvc.hrlist.a01_controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,11 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.precursor.hrsystem.mvc.hrlist.a02_service.HrListService;
 import com.precursor.hrsystem.mvc.vo.HrListVO;
+
+import jakarta.annotation.PostConstruct;
 
 //import lombok.AllArgsConstructor;
 
@@ -49,17 +51,25 @@ public class HrListController {
 		return "test";
 	}
 	
+	private static List<HrListVO> hrlist = new ArrayList<HrListVO>();
+	
 	/**
 	 * 모든 HR 인사정보를 가져오는 API
-	 * @return ResponEntity<List<HrListVO>> 200 OK, HR 인사 정보 목록
+	 * @return ResponseEntity<List<HrListVO>> 200 OK, HR 인사 정보 목록
 	 */
 	@GetMapping(value = "/hrlist-all")
 	public ResponseEntity<List<HrListVO>> getHrList(){
 		
-		List<HrListVO> hrlist = service.getHrList();
+		hrlist = service.getHrList();
 		
 		return ResponseEntity.status(HttpStatus.OK).body(hrlist);
 	}
+		
+	@GetMapping(value = "/testtest")
+	public List<HrListVO> getAllUsers(){
+
+		return service.getAllUsers();
+	}
 	
-	
+		
 }

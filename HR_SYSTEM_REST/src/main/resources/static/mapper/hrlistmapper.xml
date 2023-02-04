@@ -11,4 +11,9 @@
 		from stsboot.human_resource
 	</select>
 	
+	
+	<!-- <select id="getAllUsers" resultType="HrListTestVO">
+		select *
+		from stsboot.human_resource
+	</select> -->
 </mapper>

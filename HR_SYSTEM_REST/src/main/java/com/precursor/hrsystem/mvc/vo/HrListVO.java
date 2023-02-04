@@ -2,16 +2,18 @@ package com.precursor.hrsystem.mvc.vo;
 
 import java.sql.Date;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Data
 @Getter
 @Setter
-@ToString
-public class HrListVO extends PagingVO{
+@NoArgsConstructor
+@AllArgsConstructor
+public class HrListVO{
 	private int imKey;
 	private String imUserId;
 	private String imUserNameKr;

@@ -1,6 +1,5 @@
 package com.precursor.hrsystem.mvc.hrlist.a02_service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +18,9 @@ public class HrListService {
 		//List<HrListVO> hrlist = new ArrayList<HrListVO>(); 
 			
 		return repository.getHrList();
+	}
+
+	public List<HrListVO> getAllUsers() {
+		return repository.getAllUsers();
 	}
 }
