@@ -1,4 +1,4 @@
-package com.precursor.hrsystem.mvc.vo;
+package com.precursor.hrsystem.test.a04_dto;
 
 import java.sql.Date;
 
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class HrListVO{
+public class TestDTO{
 	private int imKey;
 	private String imUserId;
 	private String imUserNameKr;
