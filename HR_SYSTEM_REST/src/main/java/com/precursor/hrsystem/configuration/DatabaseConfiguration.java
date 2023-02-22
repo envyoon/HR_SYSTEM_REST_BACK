@@ -1,4 +1,4 @@
-package com.precursor.hrsystem.DBConfig;
+package com.precursor.hrsystem.configuration;
 import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -11,13 +11,15 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @PropertySource("classpath:/application.properties")
-public class DBConfig {
+public class DatabaseConfiguration {
 	
 	@Autowired
 	private ApplicationContext applicationContext;
@@ -53,6 +55,11 @@ public class DBConfig {
     public org.apache.ibatis.session.Configuration mybatisConfig(){
     	return new org.apache.ibatis.session.Configuration();
     }
+    
+    @Bean
+	public PlatformTransactionManager transactionManager() throws Exception{
+		return new DataSourceTransactionManager(dataSource());
+	}
 }
 
 
