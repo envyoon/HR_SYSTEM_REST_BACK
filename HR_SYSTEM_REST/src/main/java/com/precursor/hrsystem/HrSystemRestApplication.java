@@ -8,7 +8,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.precursor.hrsystem.test.a03_mapper"})
 public class HrSystemRestApplication {
 	
 	public static void main(String[] args) {
