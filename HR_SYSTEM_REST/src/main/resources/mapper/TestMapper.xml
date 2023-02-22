@@ -6,7 +6,7 @@
 <mapper namespace="com.precursor.hrsystem.test.a03_mapper.TestMapper">
 
 	<!-- Select Sample -->
-	<select id="getAll" resultType="com.precursor.hrsystem.test.a04_dto.TestDTO">
+	<select id="getTest" resultType="com.precursor.hrsystem.test.a04_dto.TestDTO">
 		select *
 		from stsboot.human_resource
 	</select>

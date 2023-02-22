@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 public class LoggerAspect {
 	// within -> 이경로에 있는건 다 실행 하겠다. 
 	//@Around("within(com.precursor.hrsystem.*)")
-	@Around("execution(* com.precursor.hrsystem.a01_controller.*(..)) or execution(* com.precursor.hrsystem.a02_service.*Impl.*(..)) or execution(* com.precursor.hrsystem.a03_mapper.*Mapper.*(..))")
+	@Around("execution(* com.precursor.hrsystem.a01_controller..*(..)) or execution(* com.precursor.hrsystem.a02_service..*Impl.*(..)) or execution(* com.precursor.hrsystem.a03_mapper.*Mapper..*(..))")
 	public Object logPrint(ProceedingJoinPoint joinPoint) throws Throwable {
 		String type = "";
 		String name = joinPoint.getSignature().getDeclaringTypeName();
